@@ -1,0 +1,41 @@
+INFO:__main__:Starting ML Recommendation Service...
+INFO:__main__:Model loaded successfully with 55 products
+ * Serving Flask app 'app'
+ * Debug mode: on
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5002
+ * Running on http://192.168.1.35:5002
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with watchdog (fsevents)
+INFO:__main__:Starting ML Recommendation Service...
+INFO:__main__:Model loaded successfully with 55 products
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 122-837-764
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2025 05:04:16] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2025 05:11:27] "GET /recommendations/similar/b7d80a7bc8f94be789abd006?limit=8 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2025 05:12:15] "GET /recommendations/similar/690d7c04598ed1ebcbdce405?limit=8 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2025 05:15:23] "GET /recommendations/user/690cf88a144500c69580f74f?limit=10 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2025 05:16:01] "GET /recommendations/similar/b7d80a7bc8f94be789abd011?limit=8 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2025 05:16:10] "GET /recommendations/user/690cf88a144500c69580f74f?limit=10 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2025 05:19:08] "GET /recommendations/similar/690d7c04598ed1ebcbdce404?limit=8 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2025 05:19:08] "GET /recommendations/similar/690d7c04598ed1ebcbdce404?limit=8 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2025 05:19:18] "GET /recommendations/user/690cf88a144500c69580f74f?limit=10 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2025 05:19:22] "GET /recommendations/similar/b7d80a7bc8f94be789abd026?limit=8 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2025 05:19:23] "GET /recommendations/user/690cf88a144500c69580f74f?limit=10 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2025 05:19:28] "GET /recommendations/similar/690d7c04598ed1ebcbdce400?limit=8 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2025 05:19:32] "GET /recommendations/user/690cf88a144500c69580f74f?limit=10 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2025 05:22:10] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2025 05:22:47] "GET /recommendations/user/690cf88a144500c69580f74f?limit=10 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2025 05:22:55] "GET /recommendations/similar/b7d80a7bc8f94be789abd038?limit=8 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2025 05:22:57] "GET /recommendations/user/690cf88a144500c69580f74f?limit=10 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2025 05:23:00] "GET /recommendations/similar/b7d80a7bc8f94be789abd042?limit=8 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2025 05:23:02] "GET /recommendations/user/690cf88a144500c69580f74f?limit=10 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2025 05:23:07] "GET /recommendations/similar/b7d80a7bc8f94be789abd020?limit=8 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Nov/2025 05:23:09] "GET /recommendations/user/690cf88a144500c69580f74f?limit=10 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/Users/anshu/Downloads/e-com/ml-service/app.py', reloading
+INFO:werkzeug: * Restarting with watchdog (fsevents)
+INFO:__main__:Starting ML Recommendation Service...
+INFO:__main__:Model loaded successfully with 55 products
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 122-837-764
