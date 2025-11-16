@@ -3,9 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import Header from '../../shared/components/Header/Header';
 import CategoryNav from '../../shared/components/CategoryNav/CategoryNav';
 import LoginModal from '../../shared/components/LoginModal/LoginModal';
+import { API_BASE_URL } from '../../utils/environment.js';
 import '../styles/CartWishlistPage.css';
-
-const API_URL = 'http://localhost:5050/api';
 
 function CartWishlistPage({ isLoggedIn, userName, userRole, onLoginSuccess, onLogout }) {
   const navigate = useNavigate();
@@ -33,7 +32,7 @@ function CartWishlistPage({ isLoggedIn, userName, userRole, onLoginSuccess, onLo
         }
         
         // Fetch all products
-        const productsRes = await fetch(`${API_URL}/products?status=approved`);
+        const productsRes = await fetch(`${API_BASE_URL}/products?status=approved`);
         const productsData = await productsRes.json();
         
         if (productsData.success) {

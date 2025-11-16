@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { API_BASE_URL } from '../../../utils/environment.js';
 
 function DashboardTab() {
   const [analytics, setAnalytics] = useState(null);
@@ -12,7 +13,7 @@ function DashboardTab() {
     try {
       setLoading(true);
       const token = localStorage.getItem('authToken');
-      const response = await fetch('http://localhost:5050/api/analytics/admin', {
+      const response = await fetch(`${API_BASE_URL}/analytics/admin`, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'

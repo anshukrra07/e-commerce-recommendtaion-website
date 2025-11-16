@@ -26,12 +26,12 @@ const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: {
-    origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+    origin: "*",
     credentials: true,
   },
 });
 
-app.use(cors({ origin: process.env.FRONTEND_URL || 'http://localhost:3000', credentials: true }));
+app.use(cors({ origin: "*", credentials: true }));
 app.use(express.json());
 
 // Serve uploaded images
@@ -77,4 +77,4 @@ app.get("/", (req, res) => res.send("🌍 E-commerce backend running!"));
 
 // ✅ Start Server
 const PORT = process.env.PORT || 5050;
-httpServer.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+httpServer.listen(PORT, "0.0.0.0", () => console.log(`🚀 Server running on port ${PORT} and listening on all interfaces`));

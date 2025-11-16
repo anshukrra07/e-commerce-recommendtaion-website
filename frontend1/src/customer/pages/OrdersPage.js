@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../../shared/components/Header/Header';
 import CategoryNav from '../../shared/components/CategoryNav/CategoryNav';
+import getBackendURL from '../../utils/environment.js';
 import '../styles/OrdersPage.css';
 
-const API_BASE = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5050';
+const API_BASE = getBackendURL();
 
 function OrdersPage({ isLoggedIn, userName, userRole, onLoginSuccess, onLogout }) {
   const navigate = useNavigate();

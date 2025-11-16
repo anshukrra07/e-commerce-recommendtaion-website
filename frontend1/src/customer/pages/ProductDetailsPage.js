@@ -5,6 +5,7 @@ import CategoryNav from '../../shared/components/CategoryNav/CategoryNav';
 import Footer from '../../shared/components/Footer/Footer';
 import LoginModal from '../../shared/components/LoginModal/LoginModal';
 import ChatModal from '../../shared/components/ChatModal/ChatModal';
+import { API_BASE_URL } from '../../utils/environment.js';
 import '../styles/ProductDetailsPage.css';
 
 const ProductDetailsPage = ({ isLoggedIn, userName, userRole, onLoginSuccess, onLogout }) => {
@@ -41,7 +42,7 @@ const ProductDetailsPage = ({ isLoggedIn, userName, userRole, onLoginSuccess, on
     const fetchProductDetails = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`http://localhost:5050/api/products/${productId}`);
+        const response = await fetch(`${API_BASE_URL}/products/${productId}`);
         const data = await response.json();
         
         if (data.success && data.product) {
@@ -92,7 +93,7 @@ const ProductDetailsPage = ({ isLoggedIn, userName, userRole, onLoginSuccess, on
         const duration = Math.floor((Date.now() - startTime) / 1000);
         const token = localStorage.getItem('authToken');
         
-        await fetch('http://localhost:5050/api/recommendations/track-view', {
+        await fetch(`${API_BASE_URL}/recommendations/track-view`, {
           method: 'POST',
           headers: {
             'Authorization': `Bearer ${token}`,
@@ -121,7 +122,7 @@ const ProductDetailsPage = ({ isLoggedIn, userName, userRole, onLoginSuccess, on
       if (!product) return;
       
       try {
-        const response = await fetch(`http://localhost:5050/api/recommendations/similar/${product.id}?limit=8`);
+        const response = await fetch(`${API_BASE_URL}/recommendations/similar/${product.id}?limit=8`);
         const data = await response.json();
         
         if (data.success && data.products) {
@@ -152,7 +153,7 @@ const ProductDetailsPage = ({ isLoggedIn, userName, userRole, onLoginSuccess, on
 
     const fetchRelatedProductsFallback = async () => {
       try {
-        const response = await fetch('http://localhost:5050/api/products');
+        const response = await fetch(`${API_BASE_URL}/products`);
         const data = await response.json();
         
         if (data.success && data.products) {
@@ -192,7 +193,7 @@ const ProductDetailsPage = ({ isLoggedIn, userName, userRole, onLoginSuccess, on
       try {
         setLoadingReviews(true);
         // Public reviews
-        const res = await fetch(`http://localhost:5050/api/reviews/product/${product.id}`);
+        const res = await fetch(`${API_BASE_URL}/reviews/product/${product.id}`);
         const data = await res.json();
         if (data.success) {
           setReviewsData(data.data);
@@ -728,13 +729,13 @@ const ProductDetailsPage = ({ isLoggedIn, userName, userRole, onLoginSuccess, on
                                 if (!window.confirm('Delete this review?')) return;
                                 try {
                                   const token = localStorage.getItem('authToken');
-                                  const res = await fetch(`http://localhost:5050/api/reviews/${rev._id}`, {
+                                  const res = await fetch(`${API_BASE_URL}/reviews/${rev._id}`, {
                                     method: 'DELETE',
                                     headers: { Authorization: `Bearer ${token}` },
                                   });
                                   const json = await res.json();
                                   if (json.success) {
-                                    const listRes = await fetch(`http://localhost:5050/api/reviews/product/${product.id}`);
+                                    const listRes = await fetch(`${API_BASE_URL}/reviews/product/${product.id}`);
                                     const list = await listRes.json();
                                     if (list.success) {
                                       setReviewsData(list.data);
@@ -792,7 +793,7 @@ const ProductDetailsPage = ({ isLoggedIn, userName, userRole, onLoginSuccess, on
                                 setSubmittingReview(true);
                                 const token = localStorage.getItem('authToken');
                                 if (!token) { setShowLoginModal(true); return; }
-                                const url = editingReviewId ? `http://localhost:5050/api/reviews/${editingReviewId}` : `http://localhost:5050/api/reviews`;
+                                const url = editingReviewId ? `${API_BASE_URL}/reviews/${editingReviewId}` : `${API_BASE_URL}/reviews`;
                                 const method = editingReviewId ? 'PUT' : 'POST';
                                 const body = editingReviewId ? { rating: reviewRating, comment: reviewComment } : { productId: product.id, rating: reviewRating, comment: reviewComment };
                                 const res = await fetch(url, {
@@ -809,7 +810,7 @@ const ProductDetailsPage = ({ isLoggedIn, userName, userRole, onLoginSuccess, on
                                   setReviewComment('');
                                   setEditingReviewId(null);
                                   // Refresh reviews
-                                  const listRes = await fetch(`http://localhost:5050/api/reviews/product/${product.id}`);
+                                  const listRes = await fetch(`${API_BASE_URL}/reviews/product/${product.id}`);
                                   const list = await listRes.json();
                                   if (list.success) {
                                     setReviewsData(list.data);

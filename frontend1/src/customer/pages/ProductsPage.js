@@ -5,6 +5,7 @@ import CategoryNav from '../../shared/components/CategoryNav/CategoryNav';
 import Footer from '../../shared/components/Footer/Footer';
 import ProductCard from '../../shared/components/ProductCard/ProductCard';
 import LoginModal from '../../shared/components/LoginModal/LoginModal';
+import { API_BASE_URL } from '../../utils/environment.js';
 import '../styles/ProductsPage.css';
 
 const ProductsPage = ({ isLoggedIn, userName, userRole, onLoginSuccess, onLogout }) => {
@@ -24,7 +25,7 @@ const ProductsPage = ({ isLoggedIn, userName, userRole, onLoginSuccess, onLogout
     const fetchProducts = async () => {
       try {
         setLoading(true);
-        const response = await fetch('http://localhost:5050/api/products');
+        const response = await fetch(`${API_BASE_URL}/products`);
         const data = await response.json();
         
         // Extract products array from response

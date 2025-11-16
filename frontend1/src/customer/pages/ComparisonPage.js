@@ -3,9 +3,8 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import Header from '../../shared/components/Header/Header';
 import CategoryNav from '../../shared/components/CategoryNav/CategoryNav';
 import LoginModal from '../../shared/components/LoginModal/LoginModal';
+import { API_BASE_URL } from '../../utils/environment.js';
 import '../styles/ComparisonPage.css';
-
-const API_URL = 'http://localhost:5050/api';
 
 function ComparisonPage({ isLoggedIn, userName, userRole, onLoginSuccess, onLogout }) {
   const navigate = useNavigate();
@@ -35,7 +34,7 @@ function ComparisonPage({ isLoggedIn, userName, userRole, onLoginSuccess, onLogo
         }
 
         // Fetch all products
-        const productsRes = await fetch(`${API_URL}/products?status=approved`);
+        const productsRes = await fetch(`${API_BASE_URL}/products?status=approved`);
         const productsData = await productsRes.json();
 
         if (productsData.success) {

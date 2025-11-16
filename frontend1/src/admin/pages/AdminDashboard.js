@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../../shared/components/Header/Header';
 import '../styles/AdminDashboard.css';
-
+import { API_BASE_URL } from '../../utils/environment.js';
 
 // Import Tab Components
 import DashboardTab from '../components/AdminTabs/DashboardTab';
@@ -10,8 +10,6 @@ import ApprovalsTab from '../components/AdminTabs/ApprovalsTab';
 import AccountsTab from '../components/AdminTabs/AccountsTab';
 import FraudMonitorTab from '../components/AdminTabs/FraudMonitorTab';
 import BannersTab from '../components/AdminTabs/BannersTab';
-
-const API_BASE_URL = 'http://localhost:5050/api';
 
 /**
  * AdminDashboard Component

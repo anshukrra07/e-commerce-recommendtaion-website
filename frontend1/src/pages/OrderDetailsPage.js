@@ -1,9 +1,10 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import { socket, joinUserRoom } from '../lib/socket';
+import getBackendURL from '../utils/environment.js';
 import './OrderDetailsPage.css';
 
-const API_BASE = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5050';
+const API_BASE = getBackendURL();
 
 async function fetchOrder(id, token) {
   const res = await fetch(`${API_BASE}/api/orders/${id}`, {

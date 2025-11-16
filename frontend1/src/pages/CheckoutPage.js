@@ -1,8 +1,9 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './CheckoutPage.css';
+import getBackendURL from '../utils/environment.js';
 
-const API_BASE = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5050';
+const API_BASE = getBackendURL();
 
 function loadScript(src) {
   return new Promise((resolve) => {

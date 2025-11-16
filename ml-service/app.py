@@ -11,7 +11,7 @@ from bson import ObjectId
 import logging
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for Express backend
+CORS(app, resources={r"/*": {"origins": "*"}})  # Enable CORS for all origins
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
