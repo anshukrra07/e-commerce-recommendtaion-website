@@ -17,7 +17,7 @@ export const getBackendURL = () => {
   // Return appropriate backend URL
   const BACKEND_URL = isLocalhost
     ? "http://localhost:5050"
-    : process.env.REACT_APP_BACKEND_URL || "https://travel-tales-f0hb.onrender.com";
+    : process.env.REACT_APP_BACKEND_URL || "https://e-commerce-recommendtaion-website.onrender.com";
 
   return BACKEND_URL;
 };
