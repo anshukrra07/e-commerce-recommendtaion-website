@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './ChatbotModal.css';
+import { API_BASE_URL } from '../../../utils/environment.js';
 
 const ChatbotModal = ({ isOpen, onClose }) => {
   const [messages, setMessages] = useState([
@@ -33,7 +34,7 @@ const ChatbotModal = ({ isOpen, onClose }) => {
     setProducts([]); // Clear previous products
 
     try {
-      const response = await fetch('http://localhost:5050/api/chatbot', {
+  const response = await fetch(`${API_BASE_URL}/chatbot`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

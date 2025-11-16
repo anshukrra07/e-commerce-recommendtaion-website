@@ -7,9 +7,7 @@ import ProductSection from '../shared/components/ProductSection/ProductSection';
 import LoginModal from '../shared/components/LoginModal/LoginModal';
 import ChatbotButton from '../shared/components/ChatbotButton/ChatbotButton';
 import ChatbotModal from '../shared/components/ChatbotModal/ChatbotModal';
-
-
-const API_BASE_URL = 'http://localhost:5050/api';
+import { API_BASE_URL } from '../utils/environment.js';
 
 const HomePage = ({ isLoggedIn, userName, userRole, onLoginSuccess, onLogout }) => {
   const [cartCount, setCartCount] = useState(0);

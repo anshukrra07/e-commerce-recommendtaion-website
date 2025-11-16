@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Carousel.css';
+import { API_BASE_URL } from '../../../utils/environment.js';
 
 const Carousel = ({ slides }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -28,7 +29,7 @@ const Carousel = ({ slides }) => {
   const handleBannerClick = (slide) => {
     // Track click
     if (slide.id) {
-      fetch(`http://localhost:5050/api/banners/${slide.id}/click`, { method: 'POST' })
+      fetch(`${API_BASE_URL}/banners/${slide.id}/click`, { method: 'POST' })
         .catch(err => console.error('Failed to track click:', err));
     }
 

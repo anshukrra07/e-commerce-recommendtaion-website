@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './ChatModal.css';
-
-const API_URL = 'http://localhost:5050/api';
+import { API_BASE_URL } from '../../../utils/environment.js';
+const API_URL = API_BASE_URL;
 
 const ChatModal = ({ isOpen, onClose, product, sellerId }) => {
   const [messages, setMessages] = useState([]);

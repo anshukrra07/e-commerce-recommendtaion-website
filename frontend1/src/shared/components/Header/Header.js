@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Header.css';
+import { API_BASE_URL } from '../../../utils/environment.js';
 
 const Header = ({ onLoginClick, isLoggedIn = false, userName = 'User', userRole = 'customer', onLogout }) => {
   const navigate = useNavigate();
@@ -53,7 +54,7 @@ const Header = ({ onLoginClick, isLoggedIn = false, userName = 'User', userRole 
       if (searchQuery.trim().length >= 2) {
         try {
           setSearching(true);
-          const response = await fetch(`http://localhost:5050/api/search?q=${encodeURIComponent(searchQuery)}`);
+          const response = await fetch(`${API_BASE_URL}/search?q=${encodeURIComponent(searchQuery)}`);
           const data = await response.json();
           
           if (data.success) {
