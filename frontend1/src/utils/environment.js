@@ -15,9 +15,7 @@ export const getBackendURL = () => {
     window.location.protocol === "file:";
 
   // Return appropriate backend URL
-  const BACKEND_URL = isLocalhost
-    ? "http://localhost:5050"
-    : process.env.REACT_APP_BACKEND_URL || "https://e-commerce-recommendtaion-website.onrender.com";
+  const BACKEND_URL =  "https://e-commerce-recommendtaion-website.onrender.com";
 
   return BACKEND_URL;
 };
