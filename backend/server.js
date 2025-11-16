@@ -24,14 +24,17 @@ connectDB();
 
 const app = express();
 const httpServer = createServer(app);
+// CORS config: reflect the request origin (don't use '*' when credentials are included)
+const corsOptions = {
+  origin: true, // reflect request origin
+  credentials: true,
+};
+
 const io = new Server(httpServer, {
-  cors: {
-    origin: "*",
-    credentials: true,
-  },
+  cors: corsOptions,
 });
 
-app.use(cors({ origin: "*", credentials: true }));
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Serve uploaded images
