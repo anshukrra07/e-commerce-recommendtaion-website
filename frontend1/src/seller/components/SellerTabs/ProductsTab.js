@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ProductForm from '../ProductForm';
 import ProductList from '../ProductList';
 import '../../styles/ProductsTabNew.css';
-
-const API_BASE_URL = 'http://localhost:5050/api';
+import { API_BASE_URL } from '../../../utils/environment.js';
 
 /**
  * ProductsTab Component

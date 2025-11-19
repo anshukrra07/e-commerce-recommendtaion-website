@@ -6,8 +6,9 @@ import Footer from '../../shared/components/Footer/Footer';
 import ProductCard from '../../shared/components/ProductCard/ProductCard';
 import LoginModal from '../../shared/components/LoginModal/LoginModal';
 import '../styles/SellerStorefront.css';
+import { API_BASE_URL } from '../../utils/environment.js';
 
-const API_URL = 'http://localhost:5050/api';
+const API_URL = API_BASE_URL;
 
 const SellerStorefront = ({ isLoggedIn, userName, userRole, onLoginSuccess, onLogout }) => {
   const { sellerKey } = useParams();

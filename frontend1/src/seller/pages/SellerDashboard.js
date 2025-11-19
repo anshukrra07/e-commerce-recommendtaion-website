@@ -8,6 +8,7 @@ import '../styles/OrdersTab.css';
 import '../styles/AnalyticsTab.css';
 import '../styles/InventoryTab.css';
 import '../styles/ReviewsTab.css';
+import { API_BASE_URL } from '../../utils/environment.js';
 import '../styles/ChatsTab.css';
 import '../styles/Responsive.css';
 
@@ -56,7 +57,7 @@ const SellerDashboard = ({ isLoggedIn, userName, userRole, onLoginSuccess, onLog
   const fetchSellerProducts = async () => {
     try {
       const token = localStorage.getItem('authToken');
-      const response = await fetch('http://localhost:5050/api/products/seller', {
+      const response = await fetch(`${API_BASE_URL}/products/seller`, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -90,7 +91,7 @@ const SellerDashboard = ({ isLoggedIn, userName, userRole, onLoginSuccess, onLog
     try {
       setLoadingAnalytics(true);
       const token = localStorage.getItem('authToken');
-      const response = await fetch('http://localhost:5050/api/analytics/seller', {
+      const response = await fetch(`${API_BASE_URL}/analytics/seller`, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -124,7 +125,7 @@ const SellerDashboard = ({ isLoggedIn, userName, userRole, onLoginSuccess, onLog
   const fetchSellerOrders = async () => {
     try {
       const token = localStorage.getItem('authToken');
-      const response = await fetch('http://localhost:5050/api/orders/seller/orders', {
+      const response = await fetch(`${API_BASE_URL}/orders/seller/orders`, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -158,7 +159,7 @@ const SellerDashboard = ({ isLoggedIn, userName, userRole, onLoginSuccess, onLog
       }
       
       // Fetch seller reviews
-      const response = await fetch(`http://localhost:5050/api/reviews/seller/${sellerId}`, {
+            const response = await fetch(`${API_BASE_URL}/reviews/seller/${sellerId}`, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -225,7 +226,7 @@ const SellerDashboard = ({ isLoggedIn, userName, userRole, onLoginSuccess, onLog
       }
 
       // Update order status in backend
-      const response = await fetch(`http://localhost:5050/api/orders/${order.orderId}/status`, {
+            const response = await fetch(`${API_BASE_URL}/orders/${order.orderId}/status`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`,

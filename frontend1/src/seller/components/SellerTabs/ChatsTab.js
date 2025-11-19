@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { API_BASE_URL } from '../../../utils/environment.js';
 
-const API_URL = 'http://localhost:5050/api';
+const API_URL = API_BASE_URL;
 
 /**
  * ChatsTab Component

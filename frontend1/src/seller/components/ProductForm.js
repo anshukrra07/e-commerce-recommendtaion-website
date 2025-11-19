@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/ProductForm.css';
+import { API_BASE_URL } from '../../utils/environment.js';
 
 /**
  * ProductForm Component
@@ -47,7 +48,7 @@ const ProductForm = ({
         formData.append('images', file);
       });
 
-      const response = await fetch('http://localhost:5050/api/products/upload-images', {
+      const response = await fetch(`${API_BASE_URL}/products/upload-images`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`
