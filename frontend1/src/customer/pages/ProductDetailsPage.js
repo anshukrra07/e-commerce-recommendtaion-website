@@ -271,7 +271,9 @@ const ProductDetailsPage = ({ isLoggedIn, userName, userRole, onLoginSuccess, on
 
   // Product specifications - use from API or defaults
   const specifications = product.specifications && Object.keys(product.specifications).length > 0
-    ? Object.fromEntries(product.specifications)
+    ? (Array.isArray(product.specifications)
+        ? Object.fromEntries(product.specifications)
+        : product.specifications)
     : {
         'Brand': product.seller || 'Generic',
         'Model': product.name,

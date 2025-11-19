@@ -19,6 +19,7 @@ const generateToken = (id, email, role) => {
 export const signup = async (req, res) => {
   try {
     const { name, email, password, phone, address } = req.body;
+    console.log('Customer signup request received:', { name, email, phone, address });
 
     // Validate required fields
     if (!name || !email || !password) {
@@ -31,6 +32,7 @@ export const signup = async (req, res) => {
     // Check if customer already exists
     const existingCustomer = await Customer.findOne({ email });
     if (existingCustomer) {
+      console.log('Customer with email already exists:', email);
       return res.status(400).json({
         success: false,
         message: "Customer with this email already exists"
@@ -53,6 +55,8 @@ export const signup = async (req, res) => {
     // Generate token
     const token = generateToken(customer._id, customer.email, "customer");
 
+    console.log('Customer signup successful:', { id: customer._id, email: customer.email });
+
     // Return response (exclude password)
     res.status(201).json({
       success: true,
@@ -68,6 +72,7 @@ export const signup = async (req, res) => {
       }
     });
   } catch (error) {
+    console.error('Signup error:', error.message);
     res.status(500).json({
       success: false,
       message: "Error registering customer",

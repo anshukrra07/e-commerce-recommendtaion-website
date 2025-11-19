@@ -75,19 +75,20 @@
 
 .product-emoji {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  /* center the emoji exactly in the image */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-size: 4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-block;
+  line-height: 1;
   transition: transform 0.3s;
+  pointer-events: none;
 }
 
 .product-card:hover .product-emoji {
-  transform: scale(1.1) rotate(5deg);
+  /* preserve centering while scaling/rotating */
+  transform: translate(-50%, -50%) scale(1.1) rotate(5deg);
 }
 
 .product-image::after {

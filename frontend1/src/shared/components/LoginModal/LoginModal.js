@@ -141,6 +141,7 @@ const LoginModal = ({ isOpen, onClose, onLoginSuccess }) => {
     const data = await response.json();
 
     if (!response.ok) {
+      console.error('Signup failed. Response:', { status: response.status, data });
       throw new Error(data.message || 'Signup failed');
     }
 

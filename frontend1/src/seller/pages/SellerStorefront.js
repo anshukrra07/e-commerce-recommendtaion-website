@@ -50,7 +50,9 @@ const SellerStorefront = ({ isLoggedIn, userName, userRole, onLoginSuccess, onLo
         const productsData = await productsRes.json();
         
         if (productsData.success) {
-          setProducts(productsData.data || []);
+          // Normalize product ids so components can rely on `product.id`
+          const normalized = (productsData.data || []).map(p => ({ ...p, id: p.id || p._id }));
+          setProducts(normalized);
         }
 
         // Fetch seller reviews
