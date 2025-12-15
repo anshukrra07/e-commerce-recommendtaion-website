@@ -5,7 +5,7 @@ import fetch from "node-fetch";
 // Helper function to trigger ML model retraining
 const triggerMLRetrain = async () => {
   try {
-    const flaskUrl = process.env.FLASK_ML_URL || 'http://localhost:5002';
+    const flaskUrl = process.env.FLASK_ML_URL || 'http://localhost:10000';
     const response = await fetch(`${flaskUrl}/train`, { method: 'POST' });
     const data = await response.json();
     console.log('🤖 ML Model retrained:', data.products_count, 'products');

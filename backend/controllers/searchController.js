@@ -1,7 +1,7 @@
 import Product from '../models/Product.js';
 import fetch from 'node-fetch';
 
-const FLASK_ML_URL = process.env.FLASK_ML_URL || 'http://localhost:5002';
+const FLASK_ML_URL = process.env.FLASK_ML_URL || 'http://localhost:10000';
 
 // @desc    Search products with ML-based similar suggestions
 // @route   GET /api/search?q=query

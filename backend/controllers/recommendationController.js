@@ -2,7 +2,7 @@ import fetch from 'node-fetch';
 import ViewHistory from '../models/ViewHistory.js';
 import Product from '../models/Product.js';
 
-const FLASK_ML_URL = process.env.FLASK_ML_URL || 'http://localhost:5002';
+const FLASK_ML_URL = process.env.FLASK_ML_URL || 'http://localhost:10000';
 
 // Cache for recommendations (1 hour)
 const recommendationCache = new Map();
