@@ -20,7 +20,7 @@ logger = logging.getLogger(__name__)
 # MongoDB connection
 MONGO_URI = os.getenv('MONGO_URI', 'mongodb://localhost:27017/ecommercedb')
 client = MongoClient(MONGO_URI)
-db = client['ecommercedb']
+db = client['s-ecom']
 
 # Global variables for model
 tfidf_vectorizer = None
