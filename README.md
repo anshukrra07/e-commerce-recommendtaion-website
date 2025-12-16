@@ -1,5 +1,9 @@
 # 🛒 Smart E-Commerce Platform with AI Product Recommendation System
 
+![alt text](<Screenshot 2025-12-16 at 8.33.23 PM.png>)
+
+WEBSITE LINK-https://e-commerce-recommendtaion-website.vercel.app
+
 A full-stack, production-ready e-commerce platform built using the MERN stack, enhanced with an AI-powered product recommendation system, seller review engine, automatic ML retraining, and an AI shopping assistant chatbot.
 
 ---
