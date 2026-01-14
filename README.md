@@ -1,6 +1,6 @@
 # 🛒 Smart E-Commerce Platform with AI Product Recommendation System
 
-![alt text](<Screenshot 2025-12-16 at 8.33.23 PM.png>)
+![alt text](<home.png>)
 
 WEBSITE LINK-https://e-commerce-recommendtaion-website.vercel.app
 
